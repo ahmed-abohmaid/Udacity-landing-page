@@ -1,0 +1,495 @@
+/*
+ *
+ * CSS written based on SMACSS architecture.
+ * To learn more, visit: http://smacss.com/
+ * 
+ * For simplicity, no reset or normalize is added. 
+ * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
+ *
+*/
+/* Variables */
+:root {
+  --main-color: rgb(114, 245, 181);
+  --main-background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+/* ---- Base Rules ---- */
+body {
+  background: var(--main-color);
+  background: linear-gradient(
+    0deg,
+    rgba(136, 203, 171, 1) 0%,
+    rgba(0, 13, 60, 1) 100%
+  );
+  margin: 0;
+  font-family: "Merriweather", serif;
+  color: #fff;
+}
+
+/* Typeography General*/
+h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 3em;
+  margin: 2em 1rem;
+}
+
+@media only screen and (min-width: 35em) {
+  h1 {
+    font-size: 7em;
+    margin: 2em 4rem 1em;
+  }
+}
+
+h2 {
+  border-bottom: 1px solid #cc1;
+  font-family: "Oxygen", Sans-Serif;
+  font-size: 3em;
+  color: #fff;
+}
+
+p {
+  line-height: 1.6em;
+  color: #eee;
+}
+
+/* ---- Layout Rules ---- */
+main {
+  margin: 10vh 1em 10vh;
+}
+
+.main-hero {
+  min-height: 40vh;
+  padding-top: 3em;
+}
+
+section {
+  position: relative;
+  min-height: 80vh;
+}
+
+/* ---- Module Rules ---- */
+
+/* Header Styles */
+.page__header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+/* Navigation Styles*/
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.navbar__menu ul {
+  padding-left: 0;
+  padding-right: 1em;
+  margin: 0;
+  text-align: right;
+}
+
+.navbar__menu li {
+  display: inline-block;
+}
+
+#navbar__list {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar__menu .menu__link {
+  padding: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  border-radius: 4px;
+}
+
+.navbar__menu .menu__link:hover {
+  background: var(--main-color);
+  color: #fff;
+  transition: ease 0.3s all;
+}
+
+.link__active {
+  background: var(--main-color);
+  color: #fff !important;
+}
+
+@media (max-width: 767px) {
+  header .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-right: 1em;
+    width: 35px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  header .icons span {
+    height: 3px;
+    margin-bottom: 5px;
+  }
+
+  header .icons span:first-child {
+    background-color: #222;
+    width: 100%;
+  }
+
+  header .icons span:nth-child(2) {
+    background-color: #222;
+    width: 60%;
+    transition: 0.3s;
+  }
+
+  header .icons:hover span:nth-child(2) {
+    width: 100%;
+  }
+
+  header .icons span:last-child {
+    background-color: #222;
+    width: 100%;
+  }
+
+  .navbar__menu {
+    flex-direction: row-reverse;
+  }
+  .navbar__menu #navbar__list {
+    display: none;
+  }
+}
+
+/* Closing icons */
+@media (max-width: 767px) {
+  .icons-click {
+    display: none;
+    width: 35px;
+    height: 14px;
+    cursor: pointer;
+    margin-right: 1em;
+    position: relative;
+  }
+  header .icons-click span {
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #222;
+    width: 100%;
+    position: absolute;
+  }
+
+  header .icons-click span:first-child,
+  header .icons-click span:first-child {
+    top: 0;
+  }
+
+  header .icons-click span:first-child {
+    transform: rotate(45deg);
+  }
+
+  header .icons-click span:nth-child(2) {
+    opacity: 0;
+  }
+
+  header .icons-click span:last-child {
+    transform: rotate(-45deg);
+  }
+}
+
+/* Display lists when click on icons */
+@media (max-width: 767px) {
+  #open {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #24484f;
+    position: absolute;
+    right: 20px;
+    top: calc(100% + 15px);
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+  }
+
+  #open::before {
+    content: "";
+    border: 10px solid;
+    border-color: transparent transparent #24484f transparent;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+  }
+
+  #open li {
+    padding: 10px;
+  }
+
+  #open li:not(:last-child) {
+    border-bottom: 1px solid #4383909a;
+  }
+
+  #open li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  #open {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Logo */
+.logo {
+  padding-left: 1em;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  max-width: 110px;
+  position: relative;
+  left: 50px;
+  z-index: 2;
+}
+
+header .logo::before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  width: 8px;
+  height: 80%;
+  left: -8px;
+  transform: skew(25deg);
+  z-index: 1;
+}
+
+header .logo::after {
+  content: "";
+  background-color: #213b57;
+  position: absolute;
+  width: calc(100% + 40px);
+  height: 80%;
+  left: -20px;
+  transform: skew(25deg) translateX(-4%);
+  z-index: -1;
+  transition: 0.3s ease-in;
+}
+
+/* Footer Styles */
+.page__footer {
+  background: #000;
+  padding: 3em;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+}
+
+@media (max-width: 991px) {
+  .page__footer {
+    text-align: center;
+  }
+}
+
+.page__footer p {
+  color: #fff;
+}
+
+.page__footer .box h3 {
+  color: #fff;
+  font-size: 45px;
+  margin: 0 0 20px;
+}
+
+.page__footer .box .social {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.page__footer .box .social li {
+  display: inline-flex;
+}
+
+.page__footer .box .social a {
+  display: inline-flex;
+  text-decoration: none;
+  color: #fff;
+  background-color: #313131;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  margin: 0 3px;
+  transition: 0.3s;
+}
+
+.page__footer .box .social .facebook:hover {
+  background-color: #1877f2;
+}
+
+.page__footer .box .social .twitter:hover {
+  background-color: #1da1f2;
+}
+
+.page__footer .box .social .youtube:hover {
+  background-color: #ff0000;
+}
+
+.page__footer .box .about {
+  line-height: 1.8;
+}
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+.landing__container {
+  padding: 1em;
+  text-align: left;
+}
+
+@media only screen and (min-width: 35em) {
+  .landing__container {
+    max-width: 50em;
+    padding: 4em;
+  }
+}
+
+section:nth-of-type(even) .landing__container {
+  margin-right: 0;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* Background Circles */
+/* Note that background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+section:nth-of-type(odd) .landing__container::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.187);
+  position: absolute;
+  z-index: -5;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .landing__container::before {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: var(--main-background);
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .landing__container::after {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: var(--main-background);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .landing__container::after {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: var(--main-background);
+  position: absolute;
+  right: 20vw;
+  bottom: -5em;
+  z-index: -5;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.your-active-class {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 247, 255, 0.306) 0%,
+    rgba(0, 0, 0, 0.363) 100%
+  );
+  border-radius: 8px;
+}
+
+section.your-active-class .landing__container::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.your-active-class .landing__container::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+}
+/* Up button and make JS access to it */
+.up {
+  position: fixed;
+  right: -100px;
+  bottom: 10px;
+  z-index: 1000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #213b57;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.up:hover {
+  background-color: var(--main-color);
+}
+
+.up.show {
+  right: 10px;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate(-1em) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}
