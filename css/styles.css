@@ -247,14 +247,6 @@ section {
   }
 }
 
-@media (min-width: 768px) {
-  #open {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
 /* Logo */
 .logo {
   padding-left: 1em;
@@ -297,21 +289,24 @@ header .logo::after {
 /* Footer Styles */
 .page__footer {
   background: #000;
-  padding: 3em;
+  padding: 3em 0;
   color: #fff;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 @media (max-width: 991px) {
   .page__footer {
+    display: flex;
+    flex-direction: column;
     text-align: center;
   }
 }
 
-.page__footer p {
+.page__footer .copy {
   color: #fff;
+  padding-left: 1em;
 }
 
 .page__footer .box h3 {
