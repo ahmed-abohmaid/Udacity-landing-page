@@ -1,4 +1,4 @@
-# Landing Page Project
+# ⚡ Landing Page Project ⚡
 
 ## Table of content : 
 
@@ -9,17 +9,17 @@
 
 ## Description
 
-This is my first project using JS and I hope that I could do all the requirements.
+This is a dynamic landing page with a lot of JavaScript functionality from the Udacity Nanodegree program.
 
 ## Author 
 
 Ahmed Ramadan (AboHmaiD)
 
 ## Technologies 
+[![My Skills](https://skillicons.dev/icons?i=css,html,js,&perline=10)](https://skillicons.dev)
 
-1. HTML5
-2. CSS3
-3. JavaScript
+## How to reach me
+<a href="https://github.com/Ahmed-AboHmaiD" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
 
 ## License 
 
