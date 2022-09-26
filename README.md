@@ -11,7 +11,7 @@
 ## Description
 This is a dynamic landing page with a lot of JavaScript functionality from the Udacity Nanodegree program.
 
-Live Project 
+Live Project :
 <a target="_blank" href="https://ahmed-abohmaid.github.io/Udacity-landing-page/index.html" alt="Weather App">DOM</a>
 
 <hr>
